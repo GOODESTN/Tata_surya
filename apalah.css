@@ -1,0 +1,125 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.space {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sun {
+    width: 80px;
+    height: 80px;
+    background-color: yellow;
+    border-radius: 50%;
+    box-shadow: 0 0 20px yellow;
+    position: absolute;
+}
+
+.orbit {
+    position: absolute;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Ini mungkin tidak perlu untuk orbit */
+}
+
+.planet {
+    position: absolute;
+    border-radius: 50%;
+}
+
+/* Mengatur ukuran dan warna planet serta ukuran orbit */
+
+.mercury-orbit {
+    width: 150px;
+    height: 150px;
+    animation: orbit-mercury 5s linear infinite;
+}
+
+.mercury {
+    width: 15px;
+    height: 15px;
+    background-color: #a9a9a9; /* Abu-abu */
+    /* Posisi awal planet Merkurius */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateX(75px); /* Radius orbit Merkurius / 2 */
+}
+
+.venus-orbit {
+    width: 200px;
+    height: 200px;
+    animation: orbit-venus 8s linear infinite reverse;
+}
+
+.venus {
+    width: 20px;
+    height: 20px;
+    background-color: #fdd271; /* Krem */
+    /* Posisi awal planet Venus */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateX(100px); /* Radius orbit Venus / 2 */
+}
+
+.earth-orbit {
+    width: 250px;
+    height: 250px;
+    animation: orbit-earth 12s linear infinite;
+}
+
+.earth {
+    width: 25px;
+    height: 25px;
+    background-color: #4682b4; /* Biru */
+    /* Posisi awal planet Bumi */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateX(125px); /* Radius orbit Bumi / 2 */
+}
+
+.mars-orbit {
+    width: 300px;
+    height: 300px;
+    animation: orbit-mars 15s linear infinite reverse;
+}
+
+.mars {
+    width: 22px;
+    height: 22px;
+    background-color: #d24d16; /* Merah */
+    /* Posisi awal planet Mars */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateX(150px); /* Radius orbit Mars / 2 */
+}
+
+/* Keyframes untuk animasi orbit */
+
+@keyframes orbit-mercury {
+    from { transform: rotate(0deg) translateX(75px); }
+    to { transform: rotate(360deg) translateX(75px); }
+}
+
+@keyframes orbit-venus {
+    from { transform: rotate(0deg) translateX(100px); }
+    to { transform: rotate(360deg) translateX(100px); }
+}
+
+@keyframes orbit-earth {
+    from { transform: rotate(0deg) translateX(125px); }
+    to { transform: rotate(360deg) translateX(125px); }
+}
+
+@keyframes orbit-mars {
+    from { transform: rotate(0deg) translateX(150px); }
+    to { transform: rotate(360deg) translateX(150px); }
+}
